@@ -1,6 +1,3 @@
-# sketch-select-invisible-layers
-
-
 sketch-select-invisible-layers
 =================
 
@@ -33,4 +30,4 @@ https://twitter.com/ademilter/status/629645888592420864
 
 MIT
 
-[demo-image]: http://i.imgur.com/c4U3g49.png?1
+[demo-image]: http://i.imgur.com/HAIH60W.png
