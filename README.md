@@ -23,8 +23,10 @@ Folder name and plugin filename will show up as items in Sketch `Plugins` menu.
 
 This plugin does not use the filter of sketch :/ I think sketch app will be added that.
 
+That's why I shared that plugin:
 https://twitter.com/ademilter/status/629645888592420864
 
+Thanks to Adem for give me a motivation about this subject.
 
 # License
 
