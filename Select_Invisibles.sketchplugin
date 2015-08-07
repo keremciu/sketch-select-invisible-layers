@@ -1,0 +1,32 @@
+function is_group(layer) {
+  return [layer isMemberOfClass:[MSLayerGroup class]] || [layer isMemberOfClass:[MSArtboardGroup class]]
+}
+
+function searchChilds(layers) {
+	for (var x=0; x < [layers count]; x++) {
+		var childLayer = layers.array()[x];
+		if (is_group(childLayer)) {
+			searchChilds([childLayer layers]);
+		} else {
+			if([childLayer isVisible] == false) {
+			    [childLayer select:true byExpandingSelection:true]
+			}
+		}
+	}
+}
+
+var doc = context.document
+[[doc currentPage] deselectAllLayers]
+
+var all_layers = [[doc currentPage] layers]
+for(var i=0; i < [all_layers count]; i++) {
+	var layer = all_layers.objectAtIndex(i)
+	if (is_group(layer)) {
+		var childs = [layer layers];
+		searchChilds(childs);
+	} else {
+		if([layer isVisible] == false) {
+			[layer select:true byExpandingSelection:true]
+		}
+	}
+}
