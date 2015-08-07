@@ -1,38 +1,28 @@
-function is_group(layer) {
-  return [layer isMemberOfClass:[MSLayerGroup class]] || [layer isMemberOfClass:[MSArtboardGroup class]]
-}
+// call helper functions
+#import 'helpers.js'
 
-function searchChilds(layers) {
-	for (var x=0; x < [layers count]; x++) {
-		var childLayer = layers.array()[x];
-		if (is_group(childLayer)) {
-			searchChilds([childLayer layers]);
-			if([childLayer isVisible] == false) {
-				[childLayer select:true byExpandingSelection:true]
-			}
-		} else {
-			if([childLayer isVisible] == false) {
-			    [childLayer select:true byExpandingSelection:true]
-			}
-		}
-	}
-}
-
+// select the document
 var doc = context.document
+
+// deselect all layers of the document
 [[doc currentPage] deselectAllLayers]
 
+// get all layers in the document
 var all_layers = [[doc currentPage] layers]
+
+// a loop for all layers of the document
 for(var i=0; i < [all_layers count]; i++) {
+	
+	// get the layer with 'i' variable of the loop
 	var layer = all_layers.objectAtIndex(i)
+
+	// if it is a invis layer, select it -function
+	is_invisible_selectit(layer)
+
+	// if the layer is a group, check children objects of that
 	if (is_group(layer)) {
-		var childs = [layer layers];
-		searchChilds(childs);
-		if([layer isVisible] == false) {
-			[layer select:true byExpandingSelection:true]
-		}
-	} else {
-		if([layer isVisible] == false) {
-			[layer select:true byExpandingSelection:true]
-		}
+		// call the recursive function to find the children of that
+		findChilds([layer layers])
 	}
+
 }
