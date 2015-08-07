@@ -7,6 +7,9 @@ function searchChilds(layers) {
 		var childLayer = layers.array()[x];
 		if (is_group(childLayer)) {
 			searchChilds([childLayer layers]);
+			if([childLayer isVisible] == false) {
+				[childLayer select:true byExpandingSelection:true]
+			}
 		} else {
 			if([childLayer isVisible] == false) {
 			    [childLayer select:true byExpandingSelection:true]
@@ -24,6 +27,9 @@ for(var i=0; i < [all_layers count]; i++) {
 	if (is_group(layer)) {
 		var childs = [layer layers];
 		searchChilds(childs);
+		if([layer isVisible] == false) {
+			[layer select:true byExpandingSelection:true]
+		}
 	} else {
 		if([layer isVisible] == false) {
 			[layer select:true byExpandingSelection:true]
