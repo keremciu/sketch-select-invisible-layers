@@ -8,15 +8,13 @@ Select invisible layers on current page in Sketch
 # Install
 
 1. Download ZIP of this repo.
-2. Extract and rename folder to suit your taste.
-3. Put the folder in your Sketch plugin folder (Use `Plugins>Reveal Plugins Folder` to find it).
-
-Folder name and plugin filename will show up as items in Sketch `Plugins` menu.
+2. Extract and rename folder to what would you like.
+3. Put the folder in your Sketch plugin folder (Use `Plugins > Reveal Plugins Folder` to find the plugin folder).
 
 
 # Usage
 
-1. Select plugin in `Plugins` menu.
+1. Select the plugin in `Plugins` menu and watch how it works.
 
 
 # Note
