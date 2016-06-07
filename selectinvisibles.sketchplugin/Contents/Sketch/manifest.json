@@ -1,0 +1,23 @@
+{
+  "author" : "Kerem Sevencan",
+  "commands" : [
+    {
+      "script" : "select.js",
+      "handler" : "onRun",
+      "shortcut" : "cmd ctrl l",
+      "name" : "Select Invisibles",
+      "identifier" : "invisibles"
+    }
+  ],
+  "menu" : {
+    "title" : "Select Layers",
+    "items" : [
+      "invisibles"
+    ]
+  },
+  "identifier" : "com.keremciu.sketch.select-invisible-layers",
+  "version" : "0.0.3",
+  "description" : "Select invisible layers on current page in Sketch",
+  "name" : "Select Invisible Layers",
+  "authorEmail" : "info@kerem.ws"
+}
